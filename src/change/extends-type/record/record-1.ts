@@ -27,3 +27,28 @@ const animalsAndfood : Ev = {
 type EvE = Extract<keyof animals, keyof Foo>
 
 const eveval: EvE = 'name'
+
+
+interface persionInfo{
+  name: string
+  age: number
+  address: string
+}
+
+type ZS = Omit<persionInfo, 'address' | 'age'>
+
+const zhagnsan: ZS = {
+  name: 'zhangsan',
+}
+
+type CustomOmit<T, K extends keyof T> = {
+  [P in keyof T as P extends K ? never : P]: T[P]
+}
+
+
+type ZS2 = CustomOmit<persionInfo, 'address' | 'age'>
+
+
+const zhagnsan2: ZS2 = {
+  name: 'zhangsan',
+}
