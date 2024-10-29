@@ -83,3 +83,21 @@ const jd: C2 = {
   ceo: "lqd",
   createYear: "1998"
 }
+
+
+type tx = Omit<company, 'createYear' | 'name'>
+
+const tengxun: tx = {
+  address: 'shengzhen',
+}
+
+type CustomOmitType<K, T extends keyof K> = {
+  [P in keyof K as P extends T ? never : P] : K[P]
+}
+
+type taobaoType = CustomOmitType<company, 'createYear'>
+
+const taobaoVal: taobaoType = {
+ name: "taobao",
+ address: "杭州"
+}
