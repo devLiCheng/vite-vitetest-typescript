@@ -12,3 +12,5 @@ export const queryNumber:  QueryNumberType = () => {
   const m = Math.random() * 100
   return m > 50 ? 1 : 2
 }
+
+
