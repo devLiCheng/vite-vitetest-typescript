@@ -100,3 +100,11 @@ const e10v: E10 = {
 
 type E11 = Omit<school, Exclude<keyof school, 'people'>>
 
+
+
+
+type CustomPick<T, K extends keyof T> = {
+  [P in K]: T[P]
+}
+
+
