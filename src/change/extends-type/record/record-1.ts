@@ -101,3 +101,27 @@ const taobaoVal: taobaoType = {
  name: "taobao",
  address: "杭州"
 }
+
+
+interface Village {
+  name: string
+  addres: string
+}
+interface Team {
+  count: number
+  oldManCount: number
+}
+
+type Merge<T, K> = {
+  [P in keyof T | keyof K] :  P extends keyof K ? K[P] : ( P extends keyof T ? T[P] : never )
+}
+
+
+type villageTeam = Merge<Village, Team>
+
+const villageTeamVal: villageTeam = {
+  name: "village",
+  addres: "杭州",
+  count: 100,
+  oldManCount: 50
+}
