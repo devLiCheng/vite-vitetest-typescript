@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <p>hello ts </p>
+  <script type="module">
+    import { LogHelper } from "./src/utils/index"
+    import { GetReturnType } from "./src/type-challenges/index"
+    const info = LogHelper.log("错误信息")
+    console.log(info)
+
+    console.log('GetReturnType', GetReturnType.queryNumber())
+  </script>
+</body>
+</html>
