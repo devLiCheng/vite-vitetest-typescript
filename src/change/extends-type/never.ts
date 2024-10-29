@@ -107,4 +107,10 @@ type CustomPick<T, K extends keyof T> = {
   [P in K]: T[P]
 }
 
+type NameOf<T extends {'name': unknown}> = T['name'] 
+
+const personInfo = {
+  name:"zhangsan"
+}
+const nameVal: NameOf<{name: string}> = personInfo['name']
 
